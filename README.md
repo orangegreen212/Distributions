@@ -10,14 +10,6 @@ A simple web application built with Streamlit to visualize different probability
 *   Includes Kernel Density Estimation (KDE) for continuous distributions.
 *   Shows basic generation parameters in the sidebar.
 
-## 📸 Screenshot
-
-<!-- Add a screenshot of your running Streamlit app here! -->
-<!-- Example: -->
-![App Screenshot](images/screenshot.png) 
-<!-- (Make sure to upload an 'images' folder with 'screenshot.png' to your repo, or adjust the path) -->
-
-
 ## 🚀 Setup and Run
 
 1.  **Clone the repository:**
