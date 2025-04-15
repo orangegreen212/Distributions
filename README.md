@@ -125,3 +125,5 @@ st.sidebar.markdown(f"""
 *   **Binomial:** Trials (n)=10, Probability (p)=0.5
 *   *Random Seed:* 142
 """)
+
+https://4c54-35-221-191-251.ngrok-free.app/
