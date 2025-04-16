@@ -22,4 +22,4 @@ A simple web application built with [Streamlit](https://streamlit.io/) to visual
 
 🐍 Code
 
-The core logic for the Streamlit application is located in the app.py file.
+The core logic for the Streamlit application is located in the [`distribution_4_diff.py`](distribution_4_diff.py) file.
