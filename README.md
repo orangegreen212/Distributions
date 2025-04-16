@@ -53,3 +53,17 @@ Follow these steps to run the application locally:
 ```bash
 git clone https://github.com/orangegreen212/Distributions.git
 cd Distributions
+
+###  2. Install Dependencies
+
+Make sure you have Python 3 installed. Then install the required libraries using pip:
+      
+pip install streamlit numpy matplotlib seaborn
+
+###  3. Run the Streamlit App
+      
+streamlit run app.py
+
+    
+
+    
