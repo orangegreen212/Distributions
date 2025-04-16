@@ -5,9 +5,7 @@ A simple web application built with [Streamlit](https://streamlit.io/) to visual
 
 ## ✨ Demo
 
-*(**Инструкция:** Замените строку ниже, чтобы вставить GIF-демонстрацию вашего приложения. Сначала загрузите GIF-файл в ваш репозиторий, затем используйте синтаксис `![Описание GIF](имя_файла.gif)`)*
-
-![Distributions charts]([(https://github.com/orangegreen212/Distributions/blob/main/8%20day.gif?raw=true])
+![Distributions charts](https://github.com/orangegreen212/Distributions/blob/main/8%20day.gif?raw=true)
 
 ## ✨ Features
 
@@ -22,3 +20,6 @@ A simple web application built with [Streamlit](https://streamlit.io/) to visual
 *   Shows basic data generation parameters in the sidebar.
 *   Uses a fixed random seed (`142`) for reproducible results.
 
+🐍 Code
+
+The core logic for the Streamlit application is located in the app.py file.
