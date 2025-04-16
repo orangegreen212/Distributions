@@ -1,129 +1,94 @@
+      
 # 📊 Distribution Visualization Dashboard
 
-A simple web application built with Streamlit to visualize different probability distributions (Normal, Exponential, Uniform, Binomial) using histograms.
+A simple web application built with [Streamlit](https://streamlit.io/) to visualize different probability distributions (Normal, Exponential, Uniform, Binomial) using histograms and density plots.
+
+## ✨ Demo
+
+*(**Инструкция:** Замените строку ниже, чтобы вставить GIF-демонстрацию вашего приложения. Сначала загрузите GIF-файл в ваш репозиторий, затем используйте синтаксис `![Описание GIF](имя_файла.gif)`)*
+
+![App Demo Placeholder - Replace Me!](https://via.placeholder.com/600x300.png?text=App+Demo+GIF+Goes+Here)
 
 ## ✨ Features
 
-*   Generates random data for four common probability distributions.
-*   Provides an interactive interface using Streamlit to select which distribution to view.
-*   Displays histograms for the selected distribution using Matplotlib and Seaborn.
-*   Includes Kernel Density Estimation (KDE) for continuous distributions.
-*   Shows basic generation parameters in the sidebar.
+*   Generates random data for four common probability distributions:
+    *   Normal
+    *   Exponential
+    *   Uniform
+    *   Binomial
+*   Interactive interface using Streamlit to select the distribution to view.
+*   Displays clear histograms using Matplotlib and Seaborn.
+*   Includes Kernel Density Estimation (KDE) overlay for continuous distributions.
+*   Shows basic data generation parameters in the sidebar.
+*   Uses a fixed random seed (`142`) for reproducible results.
 
 ## 🚀 Setup and Run
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/orangegreen212/Distributions
-    cd Distributions
-    ```
+Follow these steps to run the application locally:
 
-2.  **Install dependencies:**
-    Make sure you have Python 3 installed. Then install the required libraries:
-    ```bash
-    pip install streamlit numpy matplotlib seaborn
-    ```
-    *(Note: `pyngrok` is used in the original Colab notebook for tunneling but is not strictly required for running the Streamlit app locally.)*
+### 1. Clone the Repository
 
-3.  **Run the Streamlit app:**
-    ```bash
-    streamlit run app.py
-    ```
-    This will automatically open the application in your default web browser.
+```bash
+git clone https://github.com/orangegreen212/Distributions.git
+cd Distributions
 
-## 🐍 Code (`app.py`)
+    
 
-Here is the Python code used for the Streamlit application:
+IGNORE_WHEN_COPYING_START
+Use code with caution.Markdown
+IGNORE_WHEN_COPYING_END
+2. Install Dependencies
 
-```python
-# -*- coding: utf-8 -*-
-"""
-Streamlit app to visualize different probability distributions.
-"""
-import streamlit as st
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+Make sure you have Python 3 installed. Then install the required libraries using pip:
 
-# Set the appearance of the plots
-sns.set_style("whitegrid")
+      
+pip install streamlit numpy matplotlib seaborn
 
-# Generate data
-np.random.seed(142) # for reproducibility
+    
 
-# --- Function to Generate Data ---
-def generate_distributions(size=1000):
-    """Generates data for multiple distributions."""
-    distributions = {
-        "Normal": np.random.normal(loc=0, scale=1, size=size),
-        "Exponential": np.random.exponential(scale=1.0, size=size),
-        "Uniform": np.random.uniform(low=-2, high=2, size=size),
-        "Binomial": np.random.binomial(n=10, p=0.5, size=size) # Discrete distribution
-    }
-    return distributions
+IGNORE_WHEN_COPYING_START
+Use code with caution.Bash
+IGNORE_WHEN_COPYING_END
 
-# --- Color Mapping ---
-color_map = {
-    "Normal": "skyblue",
-    "Exponential": "lightcoral",
-    "Uniform": "mediumseagreen",
-    "Binomial": "mediumpurple"
-}
+(Note: pyngrok mentioned in some development environments is not required for running the Streamlit app locally.)
+3. Run the Streamlit App
 
-# --- Main Streamlit Interface ---
-st.title("🎲 Distribution Dashboard")
-st.write("Select a distribution to see its histogram.")
+      
+streamlit run app.py
 
-# Generate the data using the function
-distributions_data = generate_distributions()
+    
 
-# Get the list of distribution names
-distribution_names = list(distributions_data.keys())
+IGNORE_WHEN_COPYING_START
+Use code with caution.Bash
+IGNORE_WHEN_COPYING_END
 
-# Create the radio button selection
-selected_distribution = st.radio(
-    "Select Distribution:",
-    distribution_names
-)
+This command will start the Streamlit server and should automatically open the application in your default web browser.
+⚙️ Default Generation Parameters
 
-# --- Plotting ---
-st.subheader(f"Histogram for: {selected_distribution}")
+The data is generated with the following settings:
 
-fig, ax = plt.subplots()
+    Sample Size: 1000
 
-# Get the specific data array and color
-data_to_plot = distributions_data[selected_distribution]
-plot_color = color_map[selected_distribution]
+    Normal: Mean (loc) = 0, Standard Deviation (scale) = 1
 
-# Decide whether to show KDE (Kernel Density Estimate)
-# Don't show KDE for the discrete Binomial distribution
-use_kde = selected_distribution != "Binomial"
+    Exponential: Scale (scale) = 1.0
 
-# Plot the histogram using Seaborn
-sns.histplot(
-    data_to_plot,
-    kde=use_kde,
-    bins=30,
-    ax=ax,
-    color=plot_color
-)
+    Uniform: Low (low) = -2, High (high) = 2
 
-ax.set_title(f"Distribution: {selected_distribution}")
-ax.set_xlabel("Value")
-ax.set_ylabel("Frequency" if not use_kde else "Density") # Label changes based on KDE
+    Binomial: Number of Trials (n) = 10, Probability of Success (p) = 0.5
 
-# Display the plot in Streamlit
-st.pyplot(fig)
+🛠️ Technologies Used
 
-# --- Optional: Display some info about generation ---
-st.sidebar.header("Generation Info")
-st.sidebar.markdown(f"""
-*   **Sample Size:** 1000
-*   **Normal:** Mean=0, StdDev=1
-*   **Exponential:** Scale=1.0
-*   **Uniform:** Low=-2, High=2
-*   **Binomial:** Trials (n)=10, Probability (p)=0.5
-*   *Random Seed:* 142
-""")
+    Python 3
 
-https://4c54-35-221-191-251.ngrok-free.app/
+    Streamlit
+
+    NumPy
+
+    Matplotlib
+
+    Seaborn
+
+🐍 Code
+
+The core logic for the Streamlit application is located in the app.py file.
