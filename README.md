@@ -1,25 +1,52 @@
-      
 # 📊 Distribution Visualization Dashboard
 
-A simple web application built with [Streamlit](https://streamlit.io/) to visualize different probability distributions (Normal, Exponential, Uniform, Binomial) using histograms and density plots.
+**A simple interactive web app built with [Streamlit](https://streamlit.io/)**  
+🔬 Visualizes different **probability distributions** — Normal, Exponential, Uniform, and Binomial — using histograms and density plots.
 
-## ✨ Demo
+---
 
-![Distributions charts](https://github.com/orangegreen212/Distributions/blob/main/8%20day.gif?raw=true)
+## 🌐 Live Demo
 
-## ✨ Features
+<img src="https://github.com/orangegreen212/Distributions/blob/main/8%20day.gif?raw=true" width="700"/>
 
-*   Generates random data for four common probability distributions:
-    *   Normal
-    *   Exponential
-    *   Uniform
-    *   Binomial
-*   Interactive interface using Streamlit to select the distribution to view.
-*   Displays clear histograms using Matplotlib and Seaborn.
-*   Includes Kernel Density Estimation (KDE) overlay for continuous distributions.
-*   Shows basic data generation parameters in the sidebar.
-*   Uses a fixed random seed (`142`) for reproducible results.
+---
 
-🐍 Code
+## ⚙️ Features
 
-The core logic for the Streamlit application is located in the [`distribution_4_diff.py`](distribution_4_diff.py) file.
+✅ Generates random data for **4 popular probability distributions**:
+- **Normal (Gaussian)** — Bell-shaped, symmetric around the mean  
+- **Exponential** — Models the time between events in a Poisson process  
+- **Uniform** — All outcomes are equally likely  
+- **Binomial** — Number of successes in a sequence of yes/no experiments  
+
+✅ **Interactive Streamlit UI** — Select the distribution type from the sidebar  
+✅ **Matplotlib & Seaborn plots** — Clean histograms with KDE overlays  
+✅ **Sidebar parameters** — Easily adjust values for sample size, mean, std, etc.  
+✅ **Reproducible results** — Random seed (`142`) ensures consistency  
+
+
+## 🐍 Code Structure
+
+The main logic is inside:
+
+📄 [`distribution_4_diff.py`](distribution_4_diff.py)  
+It includes:
+- Distribution selection logic
+- Parameter sliders in sidebar
+- Plotting histograms with density curves
+- Handling both continuous and discrete distributions
+
+---
+
+## 🚀 How to Run Locally
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/orangegreen212/Distributions.git
+cd Distributions
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the Streamlit app
+streamlit run distribution_4_diff.py
