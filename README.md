@@ -41,6 +41,7 @@ It includes:
 ## 🧠 Learn More
 
 📚 This project was built to explore statistical distributions visually
+
 📈 Great for educational purposes or quick demos of probability theory in action.
 
 ## 🚀 How to Run Locally
