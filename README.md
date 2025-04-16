@@ -44,15 +44,12 @@ It includes:
 
 📈 Great for educational purposes or quick demos of probability theory in action.
 
-## 🚀 How to Run Locally
+## 🚀 Setup and Run
+
+Follow these steps to run the application locally:
+
+### 1. Clone the Repository
 
 ```bash
-# 1. Clone the repo
 git clone https://github.com/orangegreen212/Distributions.git
 cd Distributions
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Run the Streamlit app
-streamlit run distribution_4_diff.py
